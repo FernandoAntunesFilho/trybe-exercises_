@@ -1,0 +1,9 @@
+.linha-form{
+    margin-bottom: 10px;
+}
+
+input[type='text']{
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 14px;
+}
