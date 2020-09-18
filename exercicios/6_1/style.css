@@ -4,13 +4,32 @@
 }
 
 input[type='text']{
-    border-radius: 3px;
-    padding: 5px;
-    font-size: 14px;
+    ;
 }
 
 select{
     border-radius: 3px;
     padding: 5px;
     font-size: 14px;
+}
+
+.resumo-form{
+    background-color: rgb(216, 219, 226);
+}
+
+form{
+    background-color:rgb(169, 188, 208);
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+body{
+    background-color: rgb(88, 164, 176);
+}
+
+button{
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 14px
 }
