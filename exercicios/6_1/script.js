@@ -12,8 +12,19 @@ for (let i=0; i<estadosBrasil.length; i+=1){
 
 enviar.addEventListener('click',function(){
     let capturar = document.forms['formulario']['nome'].value + '<br>';
-    capturar += document.forms['formulario']['cpf'].value;
-    console.log(capturar);
+    capturar += document.forms['formulario']['email'].value + '<br>';
+    capturar += document.forms['formulario']['cpf'].value + '<br>';
+    capturar += document.forms['formulario']['endereco'].value + '<br>';
+    capturar += document.forms['formulario']['cidade'].value + '<br>';
+    capturar += document.forms['formulario']['estados'].value + '<br>';
+    capturar += document.forms['formulario']['casa'].value + '<br>';
+    capturar += document.forms['formulario']['apartamento'].value + '<br>';
+    capturar += document.forms['formulario']['resumo-curriculo'].value + '<br>';
+    capturar += document.forms['formulario']['cargo'].value + '<br>';
+    capturar += document.forms['formulario']['descricao-cargo'].value + '<br>';
+    capturar += document.forms['formulario']['data-inicio'].value + '<br>';
+
+    document.getElementsByClassName('resumo-form')[0].innerHTML=capturar;
 })
     
 }
