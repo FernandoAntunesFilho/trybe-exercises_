@@ -4,7 +4,9 @@
 }
 
 input[type='text']{
-    ;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 14px;
 }
 
 select{

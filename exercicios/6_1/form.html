@@ -11,7 +11,7 @@
 </head>
 <body>
     
-    <form method="GET">
+    <form id='formulario' method="GET" onsubmit="return false">
         <fieldset>
             <div class="linha-form">
                 <label for="nome">Nome</label>
@@ -75,7 +75,7 @@
                 <input type="date" id="data-inicio" name="data-inicio" required='required'>
             </div>
         </fieldset>
-        <button id='botao-enviar'>Enviar</button>
+        <button type="submit" id='botao-enviar'>Enviar</button>
     </form>
 
     <div class="resumo-form"></div>

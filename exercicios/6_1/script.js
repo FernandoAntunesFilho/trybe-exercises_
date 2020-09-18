@@ -11,7 +11,9 @@ for (let i=0; i<estadosBrasil.length; i+=1){
 }
 
 enviar.addEventListener('click',function(){
-    
+    let capturar = document.forms['formulario']['nome'].value + '<br>';
+    capturar += document.forms['formulario']['cpf'].value;
+    console.log(capturar);
 })
     
 }
