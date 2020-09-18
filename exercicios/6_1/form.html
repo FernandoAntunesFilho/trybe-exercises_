@@ -11,37 +11,56 @@
 </head>
 <body>
     
-    <fieldset>
-        <div class="linha-form">
-            <label for="nome">Nome</label>
-            <input id="nome" type="text" maxlength="40" size="40" required="required">
-        </div>        
+    <form method="GET">
+        <fieldset>
+            <div class="linha-form">
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" maxlength="40" size="40" required="required">
+            </div>        
 
-        <div class="linha-form">
-            <label for="email">Email</label>
-            <input type="text" id="email" required="required" maxlength="50" size="50">
-        </div>
+            <div class="linha-form">
+                <label for="email">Email</label>
+                <input type="text" id="email" required="required" maxlength="50" size="50">
+            </div>
 
-        <div class="linha-form">
-            <label for="cpf">CPF</label>
-            <input type="text" id="cpf" required='required' maxlength="11" size="11">
-        </div>
+            <div class="linha-form">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" required='required' maxlength="11" size="11">
+            </div>
 
-        <div class="linha-form">
-            <label for="endereco">Endereço</label>
-            <input type="text" id="endereco" maxlength="200" size="50" required='required'>
-        </div>
+            <div class="linha-form">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" maxlength="200" size="50" required='required'>
+            </div>
 
-        <div class="linha-form">
-            <label for="cidade">Cidade</label>
-            <input type="text" id="cidade" maxlength="28" size="28" required='required'>
-        </div>
+            <div class="linha-form">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" maxlength="28" size="28" required='required'>
+            </div>
 
-        <div class="linha-form">
-            <label for="estados">Estados</label>
-            <select id="estados"></select>
-        </div>
-    </fieldset>
+            <div class="linha-form">
+                <label for="estados">Estados</label>
+                <select id="estados" required='required'></select>
+            </div>
+
+            <div class="linha-form">
+                <label for="">Tipo de Residência</label>
+                
+                <input type="radio" name="residencia" id="casa">
+                <label for="casa">Casa</label>
+                
+                <input type="radio" name="residencia" id="apartamento">
+                <label for="apartamento">Apartamento</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <div class="linha-form">
+                <label for="resumo-curriculo">Resumo do currículo</label>
+                <textarea id="resumo-curriculo" maxlength="1000" required='required'></textarea>
+            </div>
+        </fieldset>
+    </form>
 
 </body>
 </html>

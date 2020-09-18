@@ -1,8 +1,15 @@
 .linha-form{
     margin-bottom: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 input[type='text']{
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+select{
     border-radius: 3px;
     padding: 5px;
     font-size: 14px;
