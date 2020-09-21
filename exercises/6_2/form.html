@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculo</title>
+
+    <script src='script.js'></script>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+</head>
+<body>
+
+    <div class="container bg-light border border-primary rounded">
+        <header>
+            <h1 class="text-center text-primary">Cadastro de Currículo</h1>
+            <p class="text-center text-secondary">Para vagas de Front end e Back end Dev's</p>
+        </header>
+    </div>
+    
+    <div class="container border border-primary bg-light rounded">
+        <form id='formulario' method="GET">        
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input class="form-control" id="nome" name="nome" type="text" maxlength="40" size="40" required="required">
+            </div>        
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input class="form-control" type="text" id="email" name="email" required="required" maxlength="50" size="50">
+            </div>
+
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input class="form-control" type="text" id="cpf" name="cpf" required='required' maxlength="11" size="11">
+            </div>
+
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input class="form-control" type="text" id="endereco" name="endereco" maxlength="200" size="50" required='required'>
+            </div>
+
+            <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input class="form-control" type="text" name="cidade" id="cidade" maxlength="28" size="28" required='required'>
+            </div>
+
+            <div class="form-group">
+                <label for="estados">Estados</label>
+                <select class="custom-select" id="estados" name="estado" required='required'></select>
+            </div>
+
+            <div class="form-group">
+                <label for="">Tipo de Residência</label>
+                
+                <div class='form-check'>
+                    <input class="form-check-input" type="radio" name="residencia" id="casa">
+                    <label class="form-check-label" for="casa">Casa</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="residencia" id="apartamento">
+                    <label class="form-check-label" for="apartamento">Apartamento</label>
+                </div>                
+            </div>
+        
+            <div class="form-group">
+                <label for="resumo-curriculo">Resumo do currículo</label>
+                <textarea class="form-control" id="resumo-curriculo" name="resumo-curriculo" maxlength="1000" required='required'></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="cargo">Cargo</label>
+                <input class="form-control" type="text" id="cargo" maxlength="40" size="40" name="cargo" required='required'>
+            </div>
+
+            <div class="form-group">
+                <label for="descricao-cargo">Descrição do cargo</label>
+                <input class="form-control" type="text" id="descricao-cargo" maxlength="500" name="descricao-cargo" size="50" required='required'>
+            </div>
+
+            <div class="form-group">
+                <label for="data-inicio">Data de início</label>
+                <input type="date" id="data-inicio" name="data-inicio" required='required'>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" id='botao-enviar'>Enviar</button>
+            </div>        
+    </form>
+    </div>    
+
+</body>
+</html>
