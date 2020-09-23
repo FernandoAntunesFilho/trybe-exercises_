@@ -1,0 +1,44 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  @media screen and (max-width:400px) {
+      body{
+          background: cyan;
+      }
+
+      p {
+          font-size: xx-large;
+      }
+
+      header p {
+          font-size: 50px;
+          text-align: center;
+          font-family: sans-serif;
+      }
+
+      nav ul {
+          display: flex;
+          justify-content: space-around;
+          font-size: x-large;
+      }
+
+      h2 {
+          font-size: xx-large;
+      }
+
+      .capitulos{
+          font-size: x-large;
+      }
+
+      .informações{
+        font-size: x-large;
+    }
+
+    h3 {
+        font-size: x-large;
+    }
+  }
