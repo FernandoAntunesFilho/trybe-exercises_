@@ -6,10 +6,6 @@ html {
   }
 
   @media screen and (max-width:400px) {
-      body{
-          background: cyan;
-      }
-
       p {
           font-size: xx-large;
       }
@@ -44,10 +40,6 @@ html {
   }
 
   @media screen and (max-width:800px) {
-    body{
-        background: darkorange;
-    }
-
     p {
         font-size: xx-large;
     }
