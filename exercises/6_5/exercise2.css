@@ -42,3 +42,49 @@ html {
         font-size: x-large;
     }
   }
+
+  @media screen and (max-width:800px) {
+    body{
+        background: darkorange;
+    }
+
+    p {
+        font-size: xx-large;
+    }
+
+    header p {
+        font-size: 50px;
+        text-align: center;
+        font-family: sans-serif;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+        font-size: x-large;
+    }
+
+    h2 {
+        font-size: xx-large;
+    }
+
+    .capitulos{
+        font-size: x-large;
+    }
+
+    .informações{
+      font-size: x-large;
+  }
+
+  h3 {
+      font-size: x-large;
+  }
+
+  .container-final{
+    display: flex;    
+  }
+
+  .final {
+    flex-basis: 50%;
+  }
+}
