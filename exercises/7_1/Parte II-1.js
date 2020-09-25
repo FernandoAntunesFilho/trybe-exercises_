@@ -1,5 +1,5 @@
 
-function fatorar(numero) {    
+const fatorar =  numero => {    
     if (numero<=0){
         return 1;
     }
@@ -10,4 +10,4 @@ function fatorar(numero) {
     return resultado;
 }
 
-console.log(fatorar(10));
+console.log(fatorar(6));
