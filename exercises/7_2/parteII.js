@@ -22,6 +22,10 @@ function addKey(objeto, chave, valor){
     objeto[chave] = valor;
 }
 
+function listKeys(objeto){    
+    console.log(Object.keys(objeto));
+}
+
 addKey(lesson2, 'turno', 'manhã');
 
 console.log('LESSON 1');
@@ -32,3 +36,7 @@ console.table(lesson2);
 console.log('');
 console.log('LESSON 3');
 console.table(lesson3);
+console.log('');
+
+console.log('LISTA DE CHAVES DO OBJETO');
+listKeys(lesson1);
