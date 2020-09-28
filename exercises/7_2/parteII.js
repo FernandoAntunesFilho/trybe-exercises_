@@ -38,6 +38,10 @@ function countStudents(){
     console.log(allLessons.lesson1.numeroEstudantes + allLessons.lesson2.numeroEstudantes + allLessons.lesson3.numeroEstudantes);
 }
 
+function getValueByNumber(object, position){
+    console.log(Object.values(object)[position]);
+}
+
 addKey(lesson2, 'turno', 'manhã');
 console.log('LESSON 1');
 console.table(lesson1);
@@ -76,3 +80,7 @@ console.log(allLessons);
 console.log('');
 console.log('TOTAL DE TODOS OS ALUNOS');
 countStudents();
+
+console.log('');
+console.log('RETORNA VALOR COM BASE NA POSIÇÃO');
+getValueByNumber(lesson2, 2);
