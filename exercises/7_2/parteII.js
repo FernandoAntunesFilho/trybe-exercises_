@@ -42,6 +42,16 @@ function getValueByNumber(object, position){
     console.log(Object.values(object)[position]);
 }
 
+function verifyPair(objeto, chave, valor){
+    const listaChaves = Object.keys(objeto);
+    for (i in listaChaves){
+        if (listaChaves[i] == chave && objeto[listaChaves[i]] == valor){
+            return true;
+        }
+    }
+    return false;
+}
+
 addKey(lesson2, 'turno', 'manhã');
 console.log('LESSON 1');
 console.table(lesson1);
@@ -84,3 +94,5 @@ countStudents();
 console.log('');
 console.log('RETORNA VALOR COM BASE NA POSIÇÃO');
 getValueByNumber(lesson2, 2);
+
+console.log(verifyPair(lesson3, 'turno', 'noite'));
