@@ -26,6 +26,10 @@ function listKeys(objeto){
     console.log(Object.keys(objeto));
 }
 
+function listValues(objeto){    
+    console.log(Object.values(objeto));
+}
+
 function objectLength(objeto){
     console.log(Object.keys(objeto).length);
 }
@@ -46,5 +50,9 @@ console.log('LISTA DE CHAVES DO OBJETO');
 listKeys(lesson1);
 
 console.log('');
-console.log('COMPRIMENTO DO OBJETO');
+console.log('TAMANHO DO OBJETO');
 objectLength(lesson1);
+
+console.log('');
+console.log('LISTA DE VALORES DO OBJETO');
+listValues(lesson2);
