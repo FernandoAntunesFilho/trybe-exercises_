@@ -34,6 +34,10 @@ function objectLength(objeto){
     console.log(Object.keys(objeto).length);
 }
 
+function countStudents(){
+    console.log(allLessons.lesson1.numeroEstudantes + allLessons.lesson2.numeroEstudantes + allLessons.lesson3.numeroEstudantes);
+}
+
 addKey(lesson2, 'turno', 'manhã');
 console.log('LESSON 1');
 console.table(lesson1);
@@ -68,3 +72,7 @@ const allLessons = {
 console.log('');
 console.log('OBJETO COM TODOS OS OBJETOS LESSON');
 console.log(allLessons);
+
+console.log('');
+console.log('TOTAL DE TODOS OS ALUNOS');
+countStudents();
