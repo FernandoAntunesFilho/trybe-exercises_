@@ -35,7 +35,6 @@ function objectLength(objeto){
 }
 
 addKey(lesson2, 'turno', 'manhã');
-
 console.log('LESSON 1');
 console.table(lesson1);
 console.log('');
@@ -56,3 +55,16 @@ objectLength(lesson1);
 console.log('');
 console.log('LISTA DE VALORES DO OBJETO');
 listValues(lesson2);
+
+const lesson1Clone = Object.assign({}, lesson1);
+const lesson2Clone = Object.assign({}, lesson2);
+const lesson3Clone = Object.assign({}, lesson3);
+const allLessons = {
+    lesson1: lesson1Clone,
+    lesson2: lesson2Clone,
+    lesson3: lesson3Clone,
+}
+
+console.log('');
+console.log('OBJETO COM TODOS OS OBJETOS LESSON');
+console.log(allLessons);
