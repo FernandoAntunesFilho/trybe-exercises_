@@ -65,18 +65,18 @@ function countBySubject (object, subject) {
 
 function createReport(object, teacher){
     const report = {};
-    const aulas = [];
-    let totalalunos = 0;
-    const chaves = Object.keys(object);
-        for (i in chaves) {
-            if (object[chaves[i]].professor == teacher) {
-                aulas.push(object[chaves[i]].materia);
-                totalalunos += object[chaves[i]].numeroEstudantes;
+    const classes = [];
+    let totalStudents = 0;
+    const keys = Object.keys(object);
+        for (i in keys) {
+            if (object[keys[i]].professor == teacher) {
+                classes.push(object[keys[i]].materia);
+                totalStudents += object[keys[i]].numeroEstudantes;
             }
         }
         report['professor'] = teacher;
-        report['aulas'] = aulas;
-        report['estudantes'] = totalalunos;
+        report['aulas'] = classes;
+        report['estudantes'] = totalStudents;
 
         return report;
 }
