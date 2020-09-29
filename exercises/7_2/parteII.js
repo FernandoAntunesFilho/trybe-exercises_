@@ -52,7 +52,7 @@ function verifyPair(objeto, chave, valor){
     return false;
 }
 
-function countBySubject (object, subject) { // object = allLessons / subject = 'Matemática'
+function countBySubject (object, subject) {
     const chaves = Object.keys(object);
     let contaAlunos = 0;
         for (i in chaves) {
@@ -61,6 +61,24 @@ function countBySubject (object, subject) { // object = allLessons / subject = '
             }
         }
     return contaAlunos;
+}
+
+function createReport(object, teacher){
+    const report = {};
+    const aulas = [];
+    let totalalunos = 0;
+    const chaves = Object.keys(object);
+        for (i in chaves) {
+            if (object[chaves[i]].professor == teacher) {
+                aulas.push(object[chaves[i]].materia);
+                totalalunos += object[chaves[i]].numeroEstudantes;
+            }
+        }
+        report['professor'] = teacher;
+        report['aulas'] = aulas;
+        report['estudantes'] = totalalunos;
+
+        return report;
 }
 
 addKey(lesson2, 'turno', 'manhã');
@@ -113,3 +131,7 @@ console.log(verifyPair(lesson3, 'turno', 'noite'));
 console.log('');
 console.log('RETORNA A QUANTIDADE DE ALUNOS DA MATÉRIA PROCURADA');
 console.log(countBySubject (allLessons, 'Matemática'));
+
+console.log('');
+console.log('RELATÓRIO DO PROFESSOR');
+console.log(createReport(allLessons, 'Maria Clara'));
