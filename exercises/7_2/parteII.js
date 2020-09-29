@@ -52,6 +52,17 @@ function verifyPair(objeto, chave, valor){
     return false;
 }
 
+function countBySubject (object, subject) { // object = allLessons / subject = 'Matemática'
+    const chaves = Object.keys(object);
+    let contaAlunos = 0;
+        for (i in chaves) {
+            if (object[chaves[i]].materia == subject){
+                contaAlunos += object[chaves[i]].numeroEstudantes;
+            }
+        }
+    return contaAlunos;
+}
+
 addKey(lesson2, 'turno', 'manhã');
 console.log('LESSON 1');
 console.table(lesson1);
@@ -95,4 +106,10 @@ console.log('');
 console.log('RETORNA VALOR COM BASE NA POSIÇÃO');
 getValueByNumber(lesson2, 2);
 
+console.log('');
+console.log('RETORNA SE O PAR PROCURADO EXISTE');
 console.log(verifyPair(lesson3, 'turno', 'noite'));
+
+console.log('');
+console.log('RETORNA A QUANTIDADE DE ALUNOS DA MATÉRIA PROCURADA');
+console.log(countBySubject (allLessons, 'Matemática'));
