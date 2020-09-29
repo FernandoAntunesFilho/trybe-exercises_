@@ -16,5 +16,5 @@ function myRemoveWithoutCopy(arr, item) {
 
 assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1, 2, 4]);
 assert.notDeepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 3), [1, 2, 3, 4]);
-// Falta o numero 3
+// Falta o numero 3 - Ver TDD1.js
 assert.deepStrictEqual(myRemoveWithoutCopy([1, 2, 3, 4], 5), [1, 2, 3, 4]);
