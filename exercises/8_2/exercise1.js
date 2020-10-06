@@ -74,10 +74,7 @@ const expected_result = [
 
 function formatedBookNames() {
   // escreva seu código aqui
-  const bookList = books.map((livro) => {
-    return `${livro.name} - ${livro.genre} - ${livro.author.name}`
-  })
-  return bookList;
+  return books.map((livro) => `${livro.name} - ${livro.genre} - ${livro.author.name}`);  
 }
 
 assert.deepEqual(formatedBookNames(), expected_result);

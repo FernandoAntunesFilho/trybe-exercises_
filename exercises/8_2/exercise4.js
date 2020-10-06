@@ -89,9 +89,7 @@ const expected_result = [
 
 function oldBooks() {
   // escreva seu código aqui
-  const livrosMaisVelhos = books.filter((livro) => {
-    return 2020 - livro.releaseYear > 60;
-  })
+  const livrosMaisVelhos = books.filter((livro) => 2020 - livro.releaseYear > 60);
   return livrosMaisVelhos.sort((a,b) => {return a.releaseYear - b.releaseYear});
 }
 
