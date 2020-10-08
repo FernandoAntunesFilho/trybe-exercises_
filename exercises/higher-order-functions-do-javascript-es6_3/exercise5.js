@@ -12,13 +12,12 @@ const names = [
 function containsA() {
   // escreva seu código aqui
   const aLeters = names.reduce((contaA, valorAtual) => {
-      contaA = contaA + valorAtual.split('a').length;
+      const valorAtualMaiusculo = valorAtual.toUpperCase();
+      contaA = contaA + (valorAtualMaiusculo.split("A").length -1);
       return contaA;
   }, 0)
 
   return aLeters;
 }
 
-// assert.deepEqual(containsA(), 20);
-
-console.log(containsA());
+assert.deepEqual(containsA(), 20);
