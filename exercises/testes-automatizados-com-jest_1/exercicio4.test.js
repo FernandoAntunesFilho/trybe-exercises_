@@ -1,7 +1,7 @@
 const { TestScheduler } = require('jest');
 const myFizzBuzz = require('./exercicio4.js');
 
-describe('Test block exercise 3', () => {
+describe('Test block exercise 4', () => {
     test('number divided by 3 and 5 returns "fizzbuzz"', () => {
         expect(myFizzBuzz(15)).toBe('fizzbuzz');
     });
