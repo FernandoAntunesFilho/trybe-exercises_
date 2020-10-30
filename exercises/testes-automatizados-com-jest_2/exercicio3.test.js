@@ -17,14 +17,19 @@ const users = {
     return findUserById(userID).then(user => user.name);
   }
 
-  test('if user exists', () => {
-      return getUserName(4).then(user => {
-          expect(user).toBe('Mark');
-      });
-  });
-
-  test('if user DONT exists', () => {
-    return getUserName(8).catch(error => {
-        expect(error).toEqual({ error: 'User with 8 not found.' });
+  describe('Search users', () => {
+    test('if user exists', async (done) => {
+      const resolve = await getUserName(5);
+      expect(resolve).toBe('Paul');
+      done();
     });
-});
+
+    test('if DONT user exists', async (done) => {
+      try {
+        await getUserName(10);
+      } catch (error) {
+        expect(error).toEqual({ error: 'User with 10 not found.' });  
+      }
+      done();
+    });
+  });
