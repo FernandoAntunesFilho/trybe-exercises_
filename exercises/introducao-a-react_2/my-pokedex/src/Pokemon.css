@@ -1,0 +1,10 @@
+.pokemon {
+    display: flex;
+    justify-content: space-around;
+    border-color: black;
+    border-radius: 5%;
+    border-style: solid;
+    width: 40%;
+    background-color: green;
+    text-align: center
+};
