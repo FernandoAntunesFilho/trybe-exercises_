@@ -7,6 +7,7 @@ import Endereco from './Endereco';
 import Cidade from './Cidade';
 import Estado from './Estado';
 import Tipo from './Tipo';
+import ResumoCurriculo from './ResumoCurriculo';
 
 class Form extends React.Component {
   render() {
@@ -26,7 +27,7 @@ class Form extends React.Component {
 
           <fieldset>
           <legend>Dados do último emprego</legend>
-            <p>Resumo do currículo</p>
+            <ResumoCurriculo />
             <p>Cargo</p>
             <p>Descrição do cargo</p>
           </fieldset>
