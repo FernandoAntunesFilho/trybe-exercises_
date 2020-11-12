@@ -6,6 +6,7 @@ import Cpf from './Cpf';
 import Endereco from './Endereco';
 import Cidade from './Cidade';
 import Estado from './Estado';
+import Tipo from './Tipo';
 
 class Form extends React.Component {
   render() {
@@ -20,7 +21,7 @@ class Form extends React.Component {
             <Endereco />
             <Cidade />
             <Estado />
-            <p>Tipo</p>
+            <Tipo />
           </fieldset>
 
           <fieldset>
