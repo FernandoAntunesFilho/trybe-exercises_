@@ -1,10 +1,6 @@
 import React from 'react';
 
 class Nome extends React.Component {
-  toUpperCase = (event) => {
-
-  }
-
   render() {
     return(
       <input

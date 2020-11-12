@@ -1,15 +1,17 @@
 import React from 'react';
+import './Form.css'
 import Nome from './Nome';
+import Email from './Email';
 
 class Form extends React.Component {
   render() {
     return(
       <div>
         <form>
-          <fieldset>
+          <fieldset className='form'>
           <legend>Dados Pessoais</legend>
             <Nome />
-            <p>E-mail</p>
+            <Email />
             <p>CPF</p>
             <p>Endereço</p>
             <p>Cidade</p>
