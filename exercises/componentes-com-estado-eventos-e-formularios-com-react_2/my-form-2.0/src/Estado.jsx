@@ -2,8 +2,9 @@ import React from 'react';
 
 class Estado extends React.Component {
   render() {
+    const {valor, handleChange} = this.props;
     return(
-      <select name='estado' required='required'>
+      <select name='estado' required='required' value={valor} onChange={handleChange}>
         <option>Estado</option>
         <option>Acre (AC)</option>
         <option>Alagoas (AL)</option>

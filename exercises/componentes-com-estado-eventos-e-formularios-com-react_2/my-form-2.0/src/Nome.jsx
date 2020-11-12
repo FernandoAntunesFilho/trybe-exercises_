@@ -2,6 +2,7 @@ import React from 'react';
 
 class Nome extends React.Component {
   render() {
+    const {valor, handleChange} = this.props;
     return(
       <input
         style={{ textTransform: 'uppercase'}}
@@ -9,7 +10,9 @@ class Nome extends React.Component {
         type='text'
         placeholder='Nome'
         maxLength='40'
-        required='required'>
+        required='required'
+        value={valor}
+        onChange={handleChange}>
       </input>
     )
   }

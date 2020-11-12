@@ -11,6 +11,7 @@ class Cidade extends React.Component {
   }
 
   render() {
+    const {valor, handleChange} = this.props;
     return(
       <input
         name='cidade'
@@ -18,7 +19,9 @@ class Cidade extends React.Component {
         placeholder='Cidade'
         maxLength='28'
         required='required'
-        onBlur={this.limpaCampo}>
+        onBlur={this.limpaCampo}
+        value={valor}
+        onChange={handleChange}>
       </input>
     )
   }

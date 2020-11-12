@@ -30,26 +30,33 @@ class Form extends React.Component {
     }
   }
 
+  handleChange = ({target}) => {
+    const {name, value} = target;
+    this.setState({
+      [name]: value
+    })
+  }
+
   render() {
     return(
       <div>
         <form>
           <fieldset className='form'>
           <legend>Dados Pessoais</legend>
-            <Nome />
-            <Email />
-            <Cpf />
-            <Endereco />
-            <Cidade />
-            <Estado />
-            <Tipo />
+            <Nome valor={this.state.nome} handleChange={this.handleChange} />
+            <Email valor={this.state.email} handleChange={this.handleChange} />
+            <Cpf valor={this.state.cpf} handleChange={this.handleChange} />
+            <Endereco valor={this.state.endereco} handleChange={this.handleChange} />
+            <Cidade valor={this.state.cidade} handleChange={this.handleChange} />
+            <Estado valor={this.state.estado} handleChange={this.handleChange} />
+            <Tipo valor={this.state.tipo} handleChange={this.handleChange} />
           </fieldset>
 
           <fieldset className='form'>
           <legend>Dados do último emprego</legend>
-            <ResumoCurriculo />
-            <Cargo />
-            <DescricaoCargo />
+            <ResumoCurriculo valor={this.state.resumoCurriculo} handleChange={this.handleChange} />
+            <Cargo valor={this.state.cargo} handleChange={this.handleChange} />
+            <DescricaoCargo valor={this.state.descricaoCargo} handleChange={this.handleChange} />
           </fieldset>
         </form>
         <BtnConsolidar />

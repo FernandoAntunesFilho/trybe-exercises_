@@ -20,6 +20,7 @@ class Cargo extends React.Component {
   }
 
   render() {
+    const {valor, handleChange} = this.props;
     return(
       <div>
         <label>Cargo</label>
@@ -27,7 +28,9 @@ class Cargo extends React.Component {
         name='cargo'
         maxLength='40'
         required='required'
-        onMouseEnter={this.showAlert} />
+        onMouseEnter={this.showAlert}
+        value={valor}
+        onChange={handleChange} />
       </div>
     )
   }
