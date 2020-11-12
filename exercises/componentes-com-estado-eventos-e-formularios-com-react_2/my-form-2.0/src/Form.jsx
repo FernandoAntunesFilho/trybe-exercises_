@@ -10,8 +10,26 @@ import Tipo from './Tipo';
 import ResumoCurriculo from './ResumoCurriculo';
 import Cargo from './Cargo';
 import DescricaoCargo from './DescricaoCargo';
+import BtnConsolidar from './BtnConsolidar';
 
 class Form extends React.Component {
+  constructor() {
+    super()
+
+    this.state={
+      nome: '',
+      email: '',
+      cpf: '',
+      endereco: '',
+      cidade: '',
+      estado: '',
+      tipo: '',
+      resumoCurriculo: '',
+      cargo: '',
+      descricaoCargo: '',
+    }
+  }
+
   render() {
     return(
       <div>
@@ -34,6 +52,7 @@ class Form extends React.Component {
             <DescricaoCargo />
           </fieldset>
         </form>
+        <BtnConsolidar />
       </div>
     )
   }
