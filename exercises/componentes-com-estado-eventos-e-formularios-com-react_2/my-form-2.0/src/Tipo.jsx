@@ -2,7 +2,7 @@ import React from 'react';
 
 class Tipo extends React.Component {
   render() {
-    const {valor, handleChange} = this.props;
+    const {handleChange} = this.props;
     return(
       <div>
         <input type='radio' name='tipo' id='Casa' value='Casa' onChange={handleChange}></input>
