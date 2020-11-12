@@ -2,6 +2,7 @@ import React from 'react';
 import './Form.css'
 import Nome from './Nome';
 import Email from './Email';
+import Cpf from './Cpf';
 
 class Form extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class Form extends React.Component {
           <legend>Dados Pessoais</legend>
             <Nome />
             <Email />
-            <p>CPF</p>
+            <Cpf />
             <p>Endereço</p>
             <p>Cidade</p>
             <p>Estado</p>
