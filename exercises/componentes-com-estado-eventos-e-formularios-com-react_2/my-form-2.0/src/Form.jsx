@@ -1,4 +1,5 @@
 import React from 'react';
+import Nome from './Nome';
 
 class Form extends React.Component {
   render() {
@@ -7,7 +8,7 @@ class Form extends React.Component {
         <form>
           <fieldset>
           <legend>Dados Pessoais</legend>
-            <p>Nome</p>
+            <Nome />
             <p>E-mail</p>
             <p>CPF</p>
             <p>Endereço</p>
