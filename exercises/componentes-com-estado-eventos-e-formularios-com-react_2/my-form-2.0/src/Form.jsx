@@ -59,7 +59,7 @@ class Form extends React.Component {
             <DescricaoCargo valor={this.state.descricaoCargo} handleChange={this.handleChange} />
           </fieldset>
         </form>
-        <BtnConsolidar />
+        <BtnConsolidar estados={this.state} />
       </div>
     )
   }
