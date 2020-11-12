@@ -3,6 +3,7 @@ import './Form.css'
 import Nome from './Nome';
 import Email from './Email';
 import Cpf from './Cpf';
+import Endereco from './Endereco'
 
 class Form extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class Form extends React.Component {
             <Nome />
             <Email />
             <Cpf />
-            <p>Endereço</p>
+            <Endereco />
             <p>Cidade</p>
             <p>Estado</p>
             <p>Tipo</p>
