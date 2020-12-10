@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class Email extends React.Component {  
   render() {
-    const {valor, handleChange} = this.props;
+    const { email } = this.props;
     return(
       <input
         name='email'
@@ -10,11 +11,14 @@ class Email extends React.Component {
         placeholder='E-mail'
         maxLength='50'
         required='required'
-        value={valor}
-        onChange={handleChange}>
-      </input>
+        defaultValue={email}
+      />
     )
   }
 }
 
-export default Email;
+const mapStatetoProps = (state) => ({
+  email: state.listReducer.email,
+})
+
+export default connect(mapStatetoProps)(Email);

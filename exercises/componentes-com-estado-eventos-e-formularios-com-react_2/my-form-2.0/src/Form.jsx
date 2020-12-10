@@ -42,22 +42,22 @@ class Form extends React.Component {
           <fieldset className='form'>
           <legend>Dados Pessoais</legend>
             <Nome />
-            <Email valor={email} handleChange={this.handleChange} />
-            <Cpf valor={cpf} handleChange={this.handleChange} />
-            <Endereco valor={endereco} handleChange={this.handleChange} />
-            <Cidade valor={cidade} handleChange={this.handleChange} />
-            <Estado valor={estado} handleChange={this.handleChange} />
-            <Tipo valor={tipo} handleChange={this.handleChange} />
+            <Email />
+            <Cpf />
+            <Endereco />
+            <Cidade />
+            <Estado />
+            <Tipo />
           </fieldset>
 
           <fieldset className='form'>
           <legend>Dados do último emprego</legend>
-            <ResumoCurriculo valor={resumoCurriculo} handleChange={this.handleChange} />
-            <Cargo valor={cargo} handleChange={this.handleChange} />
-            <DescricaoCargo valor={descricaoCargo} handleChange={this.handleChange} />
+            <ResumoCurriculo />
+            <Cargo />
+            <DescricaoCargo />
           </fieldset>
         </form>
-        <BtnConsolidar estados={this.state} />
+        <BtnConsolidar />
       </div>
     )
   }

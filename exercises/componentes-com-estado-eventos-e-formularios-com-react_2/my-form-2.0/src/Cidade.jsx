@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class Cidade extends React.Component {
   limpaCampo = (event) => {
@@ -11,7 +12,7 @@ class Cidade extends React.Component {
   }
 
   render() {
-    const {valor, handleChange} = this.props;
+    const { cidade } = this.props;
     return(
       <input
         name='cidade'
@@ -20,11 +21,14 @@ class Cidade extends React.Component {
         maxLength='28'
         required='required'
         onBlur={this.limpaCampo}
-        value={valor}
-        onChange={handleChange}>
-      </input>
+        defaultValue={ cidade }
+      />
     )
   }
 }
 
-export default Cidade;
+const mapStateToProps = (state) => ({
+  cidade: state.listReducer.cidade,
+})
+
+export default connect(mapStateToProps)(Cidade);

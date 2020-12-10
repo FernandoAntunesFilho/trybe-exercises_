@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class Endereco extends React.Component {
   render() {
-    const {valor, handleChange} = this.props;
+    const { endereco } = this.props;
     return(
       <input
         name='endereco'
@@ -10,11 +11,14 @@ class Endereco extends React.Component {
         placeholder='Endereço'
         maxLength='200'
         required='required'
-        value={valor}
-        onChange={handleChange}>
-      </input>
+        defaultValue={endereco}
+      />
     )
   }
 }
 
-export default Endereco;
+const mapStateToProps = (state) => ({
+  endereco: state.listReducer.endereco,
+})
+
+export default connect(mapStateToProps)(Endereco);

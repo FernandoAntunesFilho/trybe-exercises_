@@ -1,10 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class Estado extends React.Component {
   render() {
-    const {valor, handleChange} = this.props;
+    const { estado} = this.props;
     return(
-      <select name='estado' required='required' value={valor} onChange={handleChange}>
+      <select name='estado' required='required' defaultValue={ estado } >
         <option>Estado</option>
         <option>Acre (AC)</option>
         <option>Alagoas (AL)</option>
@@ -38,4 +39,8 @@ class Estado extends React.Component {
   }
 }
 
-export default Estado;
+const mapStateToProps = (state) => ({
+  estado: state.listReducer.estado,
+})
+
+export default connect(mapStateToProps)(Estado);

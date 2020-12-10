@@ -1,14 +1,14 @@
 const INITIAL_STATE = {
-  cargo: '',
-  cidade: '',
-  cpf: '',
-  descricaoCargo: '',
-  email: '',
-  endereco: '',
-  estado: '',
-  nome: '',
-  resumoCurriculo: '',
-  tipo: '',
+  cargo: 'valor inicial',
+  cidade: 'valor inicial',
+  cpf: '22233445520',
+  descricaoCargo: 'valor inicial',
+  email: 'valor inicial',
+  endereco: 'valor inicial',
+  estado: 'São Paulo (SP)',
+  nome: 'valor inicial',
+  resumoCurriculo: 'valor inicial',
+  tipo: 'valor inicial',
 };
 
 function listReducer(state = INITIAL_STATE, action) {
