@@ -1,5 +1,6 @@
 import React from 'react';
 import ResumoCv from './ResumoCv';
+import BtnLimpar from './BtnLimpar';
 
 class BtnConsolidar extends React.Component {
   constructor() {
@@ -34,10 +35,26 @@ class BtnConsolidar extends React.Component {
     })
   }
 
+  clearStates = () => {
+    this.setState({
+      nome: '',
+      email: '',
+      cpf: '',
+      endereco: '',
+      cidade: '',
+      estado: '',
+      tipo: '',
+      resumoCurriculo: '',
+      cargo: '',
+      descricaoCargo: '',
+    })
+  }
+
   render() {
     return(
       <div>
         <button onClick={this.setStates}>Consolidar Dados</button>
+        <BtnLimpar clearStates={this.clearStates} />
         <ResumoCv estados={this.state} />
       </div>
     )
