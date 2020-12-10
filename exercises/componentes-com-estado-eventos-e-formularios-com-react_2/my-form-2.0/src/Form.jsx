@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './Form.css'
 import Nome from './Nome';
 import Email from './Email';
@@ -13,22 +14,6 @@ import DescricaoCargo from './DescricaoCargo';
 import BtnConsolidar from './BtnConsolidar';
 
 class Form extends React.Component {
-  constructor() {
-    super()
-
-    this.state={
-      nome: '',
-      email: '',
-      cpf: '',
-      endereco: '',
-      cidade: '',
-      estado: '',
-      tipo: '',
-      resumoCurriculo: '',
-      cargo: '',
-      descricaoCargo: '',
-    }
-  }
 
   handleChange = ({target}) => {
     const {name, value} = target;
@@ -38,25 +23,38 @@ class Form extends React.Component {
   }
 
   render() {
+    const {
+      nome,
+      email,
+      cpf,
+      endereco,
+      cidade,
+      estado,
+      tipo,
+      resumoCurriculo,
+      cargo,
+      descricaoCargo
+    } = this.props;
+
     return(
       <div>
         <form>
           <fieldset className='form'>
           <legend>Dados Pessoais</legend>
-            <Nome valor={this.state.nome} handleChange={this.handleChange} />
-            <Email valor={this.state.email} handleChange={this.handleChange} />
-            <Cpf valor={this.state.cpf} handleChange={this.handleChange} />
-            <Endereco valor={this.state.endereco} handleChange={this.handleChange} />
-            <Cidade valor={this.state.cidade} handleChange={this.handleChange} />
-            <Estado valor={this.state.estado} handleChange={this.handleChange} />
-            <Tipo valor={this.state.tipo} handleChange={this.handleChange} />
+            <Nome />
+            <Email valor={email} handleChange={this.handleChange} />
+            <Cpf valor={cpf} handleChange={this.handleChange} />
+            <Endereco valor={endereco} handleChange={this.handleChange} />
+            <Cidade valor={cidade} handleChange={this.handleChange} />
+            <Estado valor={estado} handleChange={this.handleChange} />
+            <Tipo valor={tipo} handleChange={this.handleChange} />
           </fieldset>
 
           <fieldset className='form'>
           <legend>Dados do último emprego</legend>
-            <ResumoCurriculo valor={this.state.resumoCurriculo} handleChange={this.handleChange} />
-            <Cargo valor={this.state.cargo} handleChange={this.handleChange} />
-            <DescricaoCargo valor={this.state.descricaoCargo} handleChange={this.handleChange} />
+            <ResumoCurriculo valor={resumoCurriculo} handleChange={this.handleChange} />
+            <Cargo valor={cargo} handleChange={this.handleChange} />
+            <DescricaoCargo valor={descricaoCargo} handleChange={this.handleChange} />
           </fieldset>
         </form>
         <BtnConsolidar estados={this.state} />
@@ -65,4 +63,17 @@ class Form extends React.Component {
   }
 }
 
-export default Form;
+const mapStateToProps = (state) => ({
+  nome: state.listReducer.nome,
+  email: state.listReducer.email,
+  cpf: state.listReducer.cpf,
+  endereco: state.listReducer.endereco,
+  cidade: state.listReducer.cidade,
+  estado: state.listReducer.estado,
+  tipo: state.listReducer.tipo,
+  resumoCurriculo: state.listReducer.resumoCurriculo,
+  cargo: state.listReducer.cargo,
+  descricaoCargo: state.listReducer.descricaoCargo,
+})
+
+export default connect(mapStateToProps)(Form);
