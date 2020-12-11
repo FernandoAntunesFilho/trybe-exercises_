@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addName } from '../src/actions';
+import { addName } from '../src/actions/addName';
 
 class Nome extends React.Component {  
 
