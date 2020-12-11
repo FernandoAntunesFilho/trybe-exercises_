@@ -28,7 +28,7 @@ class Cidade extends React.Component {
     )
   }
 }
-// CAMPO FUNCIONANDO - PASSAR PARA O PROXIMO
+
 const mapStateToProps = (state) => ({
   cidade: state.listReducer.cidade,
 })
