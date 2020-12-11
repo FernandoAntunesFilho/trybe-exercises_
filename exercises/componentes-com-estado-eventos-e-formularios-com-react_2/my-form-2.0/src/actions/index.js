@@ -1,6 +1,3 @@
+const ADD_NAME = 'ADD_NAME'
 
-export const addData = (field, value) => ({
-  type: 'ADD_DATA',
-  key: field,
-  value,
-});
+export const addName = (value) => ({type: ADD_NAME, value,});

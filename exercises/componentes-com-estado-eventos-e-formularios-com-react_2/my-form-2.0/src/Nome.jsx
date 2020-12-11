@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addData } from '../src/actions';
+import { addName } from '../src/actions';
 
 class Nome extends React.Component {  
 
   render() {
-    const {nome, addData} = this.props;
+    const {nome, addName} = this.props;
 
     return(
       <input
@@ -17,7 +17,7 @@ class Nome extends React.Component {
         maxLength='40'
         required='required'
         defaultValue={nome}
-        onChange={(event)=> addData('nome', event.target.value)}
+        onChange={(event)=> addName(event.target.value)}
       />
     )
   }
@@ -27,11 +27,7 @@ const mapStateToProps = (state) => ({
   nome: state.listReducer.nome,
 })
 
-// const mapDispatchToProps = (dispatch) => ({  
-//   addData: (field, value) => dispatch(addData(field, value))
-// });
-
-const mapDispatchToProps = { addData };
+const mapDispatchToProps = { addName };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Nome);
 

@@ -14,8 +14,8 @@ const INITIAL_STATE = {
 function listReducer(state = INITIAL_STATE, action) {
   
   switch (action.type) {
-    case 'ADD_DATA':
-      return Object.assign({}, state, { action });
+    case 'ADD_NAME':
+      return Object.assign({}, state, { 'nome': action.value });
     default:
       return state;
   }
