@@ -1,2 +1,6 @@
 
-export const addData = (key, value) => ({ type: 'ADD_DATA', key, value });
+export const addData = (field, value) => ({
+  type: 'ADD_DATA',
+  key: field,
+  value,
+});
