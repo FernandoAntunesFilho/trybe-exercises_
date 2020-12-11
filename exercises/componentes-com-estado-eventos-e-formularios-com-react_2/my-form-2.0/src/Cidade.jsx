@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { addCidade } from '../src/actions/addCidade';
 
 class Cidade extends React.Component {
   limpaCampo = (event) => {
@@ -12,7 +13,7 @@ class Cidade extends React.Component {
   }
 
   render() {
-    const { cidade } = this.props;
+    const { cidade, addCidade } = this.props;
     return(
       <input
         name='cidade'
@@ -22,13 +23,16 @@ class Cidade extends React.Component {
         required='required'
         onBlur={this.limpaCampo}
         defaultValue={ cidade }
+        onChange={(event) => addCidade(event.target.value)}
       />
     )
   }
 }
-
+// CAMPO FUNCIONANDO - PASSAR PARA O PROXIMO
 const mapStateToProps = (state) => ({
   cidade: state.listReducer.cidade,
 })
 
-export default connect(mapStateToProps)(Cidade);
+const mapDispatchToProps = { addCidade };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cidade);

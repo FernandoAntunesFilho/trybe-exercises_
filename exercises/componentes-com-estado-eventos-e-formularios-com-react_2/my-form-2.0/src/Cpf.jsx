@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { addCPF } from '../src/actions/addCPF';
 
 class CPF extends React.Component {
   render() {
-    const { cpf } = this.props;
+    const { cpf, addCPF } = this.props;
     return(
       <input
         name='cpf'
@@ -12,6 +13,7 @@ class CPF extends React.Component {
         maxLength='11'
         required='required'
         defaultValue={cpf}
+        onChange={(event) => addCPF(event.target.value)}
       />
     )
   }
@@ -21,4 +23,6 @@ const mapStateToProps = (state) => ({
   cpf: state.listReducer.cpf,
 })
 
-export default connect(mapStateToProps)(CPF);
+const mapDisPatchToProps = { addCPF }
+
+export default connect(mapStateToProps, mapDisPatchToProps)(CPF);
