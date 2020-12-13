@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { addTipo } from '../src/actions/addTipo';
 
 class Tipo extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class Tipo extends React.Component {
           name='tipo'
           id='Casa'
           value='Casa'
+          onChange={(event) => } // <===== CONTINUAR DAQUI
         />
         <label htmlFor='Casa'>Casa</label>
 

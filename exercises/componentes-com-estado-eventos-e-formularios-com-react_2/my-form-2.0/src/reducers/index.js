@@ -26,6 +26,8 @@ function listReducer(state = INITIAL_STATE, action) {
       return Object.assign({}, state, { 'cidade': action.value });
     case 'ADD_ESTADO':
       return Object.assign({}, state, { 'estado': action.value });
+      case 'ADD_TIPO':
+      return Object.assign({}, state, { 'tipo': action.value });
     default:
       return state;
   }
