@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addCargo } from '../src/actions/addCargo';
 
 class Cargo extends React.Component {
   constructor() {
@@ -20,7 +22,7 @@ class Cargo extends React.Component {
   }
 
   render() {
-    const {valor, handleChange} = this.props;
+    const {cargo, addCargo} = this.props;
     return(
       <div>
         <label>Cargo</label>
@@ -29,11 +31,17 @@ class Cargo extends React.Component {
         maxLength='40'
         required='required'
         onMouseEnter={this.showAlert}
-        value={valor}
-        onChange={handleChange} />
+        value={ cargo }
+        onChange={ (event) => addCargo(event.target.value) } />
       </div>
     )
   }
 }
 
-export default Cargo;
+const mapStateToProps = (state) => ({
+  cargo: state.listReducer.cargo,
+});
+
+const mapDispatchToProps = { addCargo };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cargo);
