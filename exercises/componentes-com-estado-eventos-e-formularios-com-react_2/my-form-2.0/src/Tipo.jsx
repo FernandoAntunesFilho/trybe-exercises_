@@ -4,7 +4,7 @@ import { addTipo } from '../src/actions/addTipo';
 
 class Tipo extends React.Component {
   render() {
-    
+    const {addTipo} = this.props;
     return(
       <div>
         <input
@@ -12,7 +12,7 @@ class Tipo extends React.Component {
           name='tipo'
           id='Casa'
           value='Casa'
-          onChange={(event) => } // <===== CONTINUAR DAQUI
+          onChange={(event) => addTipo(event.target.value) }
         />
         <label htmlFor='Casa'>Casa</label>
 
@@ -21,6 +21,7 @@ class Tipo extends React.Component {
           name='tipo'
           id='Apartamento'
           value='Apartamento'
+          onChange={(event) => addTipo(event.target.value) }
         />
         <label htmlFor='Apartamento'>Apartamento</label>
       </div>
@@ -32,6 +33,6 @@ const mapStateToProps = (state) => ({
   tipo: state.listReducer.tipo,
 })
 
-export default connect(mapStateToProps)(Tipo);
+const mapDispatchToProps = { addTipo };
 
-// MUDAR TODO O RACIOCINIO, PORQUE QUERO MANDAR INFORMAÇÕES PARA O STATE DO REDUX, E NÃO RECEBER...
+export default connect(mapStateToProps, mapDispatchToProps)(Tipo);
