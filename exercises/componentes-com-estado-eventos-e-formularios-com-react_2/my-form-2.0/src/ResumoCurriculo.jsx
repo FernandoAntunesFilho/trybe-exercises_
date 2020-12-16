@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addResumoCurriculo } from '../src/actions/addResumoCurriculo';
 
 class ResumoCurriculo extends React.Component {
   render() {
-    const {valor, handleChange} = this.props;
+    const {resumoCurriculo, addResumoCurriculo} = this.props;
     return(
       <div>
         <label>Resumo do Currículo</label>
@@ -10,11 +12,17 @@ class ResumoCurriculo extends React.Component {
         name='resumoCurriculo'
         maxLength='1000'
         required='required'
-        value={valor}
-        onChange={handleChange} />
+        value={resumoCurriculo}
+        onChange={(event) => addResumoCurriculo(event.target.value) } />
       </div>
     )
   }
 }
 
-export default ResumoCurriculo;
+const mapStateToProps = (state) => ({
+  resumoCurriculo: state.listReducer.resumoCurriculo,
+})
+
+const mapDispatchToProps = { addResumoCurriculo };
+
+export default connect(mapStateToProps,mapDispatchToProps)(ResumoCurriculo);
