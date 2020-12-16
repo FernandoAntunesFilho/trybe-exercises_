@@ -16,7 +16,7 @@ class Nome extends React.Component {
         placeholder='Nome'
         maxLength='40'
         required='required'
-        defaultValue={nome}
+        value={nome}
         onChange={(event)=> addName(event.target.value)}
       />
     )

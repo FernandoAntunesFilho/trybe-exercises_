@@ -12,7 +12,7 @@ class Endereco extends React.Component {
         placeholder='Endereço'
         maxLength='200'
         required='required'
-        defaultValue={endereco}
+        value={endereco}
         onChange={(event) => addEndereco(event.target.value)}
       />
     )

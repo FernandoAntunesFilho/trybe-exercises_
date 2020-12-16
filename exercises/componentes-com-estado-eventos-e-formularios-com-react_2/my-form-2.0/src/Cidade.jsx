@@ -22,7 +22,7 @@ class Cidade extends React.Component {
         maxLength='28'
         required='required'
         onBlur={this.limpaCampo}
-        defaultValue={ cidade }
+        value={ cidade }
         onChange={(event) => addCidade(event.target.value)}
       />
     )

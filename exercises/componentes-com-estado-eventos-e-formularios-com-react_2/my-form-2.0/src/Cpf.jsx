@@ -12,7 +12,7 @@ class CPF extends React.Component {
         placeholder='CPF'
         maxLength='11'
         required='required'
-        defaultValue={cpf}
+        value={cpf}
         onChange={(event) => addCPF(event.target.value)}
       />
     )

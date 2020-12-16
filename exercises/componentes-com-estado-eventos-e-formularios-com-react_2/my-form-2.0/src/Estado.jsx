@@ -9,7 +9,7 @@ class Estado extends React.Component {
       <select
         name='estado'
         required='required'
-        defaultValue={ estado }
+        value={ estado }
         onChange={(event) => addEstado(event.target.value)}
       >
         <option>Estado</option>

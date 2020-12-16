@@ -12,7 +12,7 @@ class Email extends React.Component {
         placeholder='E-mail'
         maxLength='50'
         required='required'
-        defaultValue={email}
+        value={email}
         onChange={(event) => addEmail(event.target.value)}
       />
     )
