@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 class ResumoCv extends React.Component {
   render() {
@@ -12,7 +13,7 @@ class ResumoCv extends React.Component {
       tipo,
       resumoCurriculo,
       cargo,
-      descricaoCargo} = this.props.estados;
+      descricaoCargo} = this.props.resumo;
 
     return(
       <div>
@@ -34,4 +35,8 @@ class ResumoCv extends React.Component {
   }
 }
 
-export default ResumoCv;
+const mapStateToProps = (state) => ({
+  resumo: state.listReducer
+})
+
+export default connect(mapStateToProps)(ResumoCv);

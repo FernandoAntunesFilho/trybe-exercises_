@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import './Form.css'
 import Nome from './Nome';
 import Email from './Email';
@@ -12,6 +11,7 @@ import ResumoCurriculo from './ResumoCurriculo';
 import Cargo from './Cargo';
 import DescricaoCargo from './DescricaoCargo';
 import BtnConsolidar from './BtnConsolidar';
+import BtnLimpar from './BtnLimpar';
 
 class Form extends React.Component {
 
@@ -23,18 +23,6 @@ class Form extends React.Component {
   }
 
   render() {
-    const {
-      nome,
-      email,
-      cpf,
-      endereco,
-      cidade,
-      estado,
-      tipo,
-      resumoCurriculo,
-      cargo,
-      descricaoCargo
-    } = this.props;
 
     return(
       <div>
@@ -58,22 +46,10 @@ class Form extends React.Component {
           </fieldset>
         </form>
         <BtnConsolidar />
+        <BtnLimpar />
       </div>
     )
   }
 }
 
-const mapStateToProps = (state) => ({
-  nome: state.listReducer.nome,
-  email: state.listReducer.email,
-  cpf: state.listReducer.cpf,
-  endereco: state.listReducer.endereco,
-  cidade: state.listReducer.cidade,
-  estado: state.listReducer.estado,
-  tipo: state.listReducer.tipo,
-  resumoCurriculo: state.listReducer.resumoCurriculo,
-  cargo: state.listReducer.cargo,
-  descricaoCargo: state.listReducer.descricaoCargo,
-})
-
-export default connect(mapStateToProps)(Form);
+export default Form;
