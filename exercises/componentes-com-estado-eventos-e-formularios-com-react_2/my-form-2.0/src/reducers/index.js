@@ -32,6 +32,8 @@ function listReducer(state = INITIAL_STATE, action) {
       return Object.assign({}, state, { 'resumoCurriculo': action.value });
     case 'ADD_CARGO':
       return Object.assign({}, state, { 'cargo': action.value });
+    case 'ADD_DESCRICAOCARGO':
+      return Object.assign({}, state, { 'descricaoCargo': action.value });
     default:
       return state;
   }

@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { addDescricaoCargo } from '../src/actions/addDescricaoCargo';
 
 class DescricaoCargo extends React.Component {
   render() {
-    const {valor, handleChange} = this.props;
+    const {descricaoCargo, addDescricaoCargo} = this.props;
     return(
       <input
         name='descricaoCargo'
@@ -10,11 +12,17 @@ class DescricaoCargo extends React.Component {
         placeholder='Descrição do cargo'
         maxLength='500'
         required='required'
-        value={valor}
-        onChange={handleChange}>
+        value={ descricaoCargo }
+        onChange={ (event) => addDescricaoCargo(event.target.value) }>
       </input>
     )
   }
 }
 
-export default DescricaoCargo;
+const mapStateToProps = (state) => ({
+  descricaoCargo: state.listReducer.descricaoCargo
+});
+
+const mapDispatchToProps = { addDescricaoCargo }
+
+export default connect(mapStateToProps, mapDispatchToProps)(DescricaoCargo);
