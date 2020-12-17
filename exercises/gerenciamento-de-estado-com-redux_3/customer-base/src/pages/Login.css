@@ -9,9 +9,7 @@
   width: 30%;
   margin-top: 15%;
   padding: 30px;
-  border-color: black;
-  border-style: solid;
-  border-radius: 4%;
+  border: 1px solid black;
 }
 
 .form {
