@@ -14,9 +14,15 @@ class Clientes extends React.Component {
         <p>Nenhum cliente cadastrado</p>
         <button
           type='button'
-          onClick={ () => this.handleClick('novocliente') }
+          onClick={ () => this.handleClick('/novocliente') }
         >
           Novo cliente
+        </button>
+        <button
+          type='button'
+          onClick={ () => this.handleClick('/') }
+        >
+          Sair
         </button>
       </div>
     )
