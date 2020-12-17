@@ -1,5 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import LoginFail from '../pages/LoginFail'
+
 
 class Clientes extends React.Component {
 
@@ -8,7 +11,9 @@ class Clientes extends React.Component {
   }
 
   render() {
+    const { email, password } = this.props;
     return(
+      email === 'fernando.antunes1@gmail.com' && password === 'ferfilho1983' ?
       <div className='clientes'>
         <h1>CLIENTES</h1>
         <p>Nenhum cliente cadastrado</p>
@@ -24,9 +29,15 @@ class Clientes extends React.Component {
         >
           Sair
         </button>
-      </div>
+      </div> :
+      <LoginFail />
     )
   }
 }
 
-export default withRouter(Clientes);
+const mapStateToProps = (state) => ({
+  email: state.userReducer.email,
+  password: state.userReducer.password,
+})
+
+export default connect(mapStateToProps)(withRouter(Clientes));
