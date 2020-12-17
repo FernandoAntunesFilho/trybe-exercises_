@@ -1,0 +1,30 @@
+.login {
+  display: flex;
+  justify-content: center;
+}
+
+.container-login {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-top: 15%;
+  padding: 30px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 4%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+input {
+  margin: 10px;
+  font-size: large;
+}
