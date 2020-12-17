@@ -1,5 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addCustomer } from '../actions/addCustomer';
 
 class NovoCliente extends React.Component {
 
@@ -7,18 +9,27 @@ class NovoCliente extends React.Component {
     this.props.history.push(path);
   }
 
+  dispatchData() {
+    const { addCustomer } = this.props;
+    const name = document.getElementById('name').value;
+    const age = document.getElementById('age').value;
+    const email = document.getElementById('email').value;
+
+    addCustomer(name, age, email);
+  }
+
   render() {
     return(
       <div className='novo-cliente'>
         <h1>Cadastrar novo cliente</h1>
         <form>
-          <input type='text' placeholder='Nome' />
-          <input type='number' placeholder='Idade' />
-          <input type='email' placeholder='e-mail' />
+          <input id='name' type='text' placeholder='Nome' />
+          <input id='age' type='number' placeholder='Idade' />
+          <input id='email' type='email' placeholder='e-mail' />
         </form>
         <button
           type='button'
-          onClick={ () => alert('Cliente cadastrado com sucesso')}
+          onClick={ () => this.dispatchData()}
         >
           Cadastrar
         </button>
@@ -33,4 +44,6 @@ class NovoCliente extends React.Component {
   }
 }
 
-export default withRouter(NovoCliente);
+const mapDispatchToProps = { addCustomer }
+
+export default connect(null, mapDispatchToProps)(withRouter(NovoCliente));
