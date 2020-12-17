@@ -1,11 +1,26 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Clientes extends React.Component {
+
+  handleClick(path) {
+    this.props.history.push(path);
+  }
+
   render() {
     return(
-      <span>PÁGINA DE CLIENTES CADASTRADOS</span>
+      <div className='clientes'>
+        <h1>CLIENTES</h1>
+        <p>Nenhum cliente cadastrado</p>
+        <button
+          type='button'
+          onClick={ () => this.handleClick('novocliente') }
+        >
+          Novo cliente
+        </button>
+      </div>
     )
   }
 }
 
-export default Clientes;
+export default withRouter(Clientes);
