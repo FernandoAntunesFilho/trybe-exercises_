@@ -1,18 +1,4 @@
-const INITIAL_STATE = [{
-  name: 'Fernando',
-  age: 37,
-  email: 'gmail',
-},
-{
-  name: 'Talita',
-  age: 36,
-  email: 'hotmail',
-},
-{
-  name: 'Davi',
-  age: 4,
-  email: 'bol',
-}];
+const INITIAL_STATE = [];
 
 function customerReducer(state = INITIAL_STATE, action) {
   
