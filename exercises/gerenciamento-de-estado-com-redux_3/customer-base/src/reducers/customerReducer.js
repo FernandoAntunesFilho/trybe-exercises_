@@ -11,7 +11,7 @@ const INITIAL_STATE = [{
 {
   name: 'Davi',
   age: 4,
-  email: 'gmail',
+  email: 'bol',
 }];
 
 function customerReducer(state = INITIAL_STATE, action) {
@@ -21,6 +21,8 @@ function customerReducer(state = INITIAL_STATE, action) {
       return [...state, { name: action.name, age: action.age, email: action.email }];
     case 'REMOVE_CUSTOMER':
       return state.filter((item, index) => index !== action.id);
+    case 'SORT_CUSTOMER':
+      return action.clientes;
     default:
       return state;
   }
