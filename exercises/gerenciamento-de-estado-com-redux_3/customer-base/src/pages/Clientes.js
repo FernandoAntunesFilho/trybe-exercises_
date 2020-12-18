@@ -11,12 +11,18 @@ class Clientes extends React.Component {
   }
 
   render() {
-    const { email, password } = this.props;
+    const { email, password, clientes } = this.props;
     return(
       email === 'fernando.antunes1@gmail.com' && password === 'ferfilho1983' ?
       <div className='clientes'>
         <h1>CLIENTES</h1>
-        <p>Nenhum cliente cadastrado</p>
+        { clientes.length === 0 ?
+          <p>Nenhum cliente cadastrado</p> :
+          clientes.map((cliente) => {
+            return <li key={ cliente.email }>
+              {`${cliente.name} - ${cliente.age} anos - ${cliente.email}`}
+            </li>})
+        }
         <button
           type='button'
           onClick={ () => this.handleClick('/novocliente') }
@@ -38,6 +44,7 @@ class Clientes extends React.Component {
 const mapStateToProps = (state) => ({
   email: state.userReducer.email,
   password: state.userReducer.password,
+  clientes: state.customerReducer
 })
 
 export default connect(mapStateToProps)(withRouter(Clientes));
