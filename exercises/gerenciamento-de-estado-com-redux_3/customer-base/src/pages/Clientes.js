@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { removeCustomer } from '../actions/removeCustomer';
 import LoginFail from '../pages/LoginFail'
 
 
@@ -11,17 +12,20 @@ class Clientes extends React.Component {
   }
 
   render() {
-    const { email, password, clientes } = this.props;
+    const { email, password, clientes, removeCustomer } = this.props;
     return(
       email === 'fernando.antunes1@gmail.com' && password === 'ferfilho1983' ?
         <div className='clientes'>
           <h1>CLIENTES</h1>
           { clientes.length === 0 ?
             <p>Nenhum cliente cadastrado</p> :
-            clientes.map((cliente) => {
-              return <li key={ cliente.email }>
-                {`${cliente.name} - ${cliente.age} anos - ${cliente.email}`}
-              </li>})
+            clientes.map((cliente, index) => {
+              return <div>
+                <li key={ cliente.email }>
+                  {`${cliente.name} - ${cliente.age} anos - ${cliente.email}`}
+                  <button type='button' onClick={ () => removeCustomer(index) }>X</button>
+                </li>
+              </div>})
           }
           <button
             type='button'
@@ -47,4 +51,6 @@ const mapStateToProps = (state) => ({
   clientes: state.customerReducer
 })
 
-export default connect(mapStateToProps)(withRouter(Clientes));
+const mapDispatchToProps = { removeCustomer };
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Clientes));
