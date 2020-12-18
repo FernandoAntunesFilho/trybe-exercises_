@@ -16,6 +16,10 @@ class NovoCliente extends React.Component {
     const email = document.getElementById('email').value;
 
     addCustomer(name, age, email);
+
+    document.getElementById('name').value = '';
+    document.getElementById('age').value = '';
+    document.getElementById('email').value = '';
   }
 
   render() {
