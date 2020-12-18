@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { removeCustomer } from '../actions/removeCustomer';
+import { removeUser } from '../actions/removeUser';
 import { sortCustomer } from '../actions/sortCustomer';
 import LoginFail from '../pages/LoginFail'
 
@@ -15,7 +16,11 @@ class Clientes extends React.Component {
     }
   }
 
-  handleClick(path) {
+  handleClick(path, buttonFunction) {
+    const { removeUser } = this.props;
+    if (buttonFunction === 'Sair') {
+      removeUser();
+    }
     this.props.history.push(path);
   }
 
@@ -52,13 +57,13 @@ class Clientes extends React.Component {
           }
           <button
             type='button'
-            onClick={ () => this.handleClick('/novocliente') }
+            onClick={ () => this.handleClick('/novocliente', 'Novo Cliente') }
           >
             Novo cliente
           </button>
           <button
             type='button'
-            onClick={ () => this.handleClick('/') }
+            onClick={ () => this.handleClick('/', 'Sair') }
           >
             Sair
           </button>
@@ -80,6 +85,6 @@ const mapStateToProps = (state) => ({
   clientes: state.customerReducer
 })
 
-const mapDispatchToProps = { removeCustomer, sortCustomer };
+const mapDispatchToProps = { removeCustomer, sortCustomer, removeUser };
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Clientes));
