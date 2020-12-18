@@ -7,7 +7,7 @@ class Home extends React.Component {
     return(
       <div className='centered'>
         <span>
-         <Link to='/login'>Faça seu Login para continuar</Link>
+         <Link to='/login'>Faça seu Login para acessar o sistema</Link>
         </span>
       </div>
     )

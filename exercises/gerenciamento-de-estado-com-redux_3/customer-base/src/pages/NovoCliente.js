@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addCustomer } from '../actions/addCustomer';
+import LoginFail from '../pages/LoginFail'
 
 class NovoCliente extends React.Component {
 
@@ -23,31 +24,39 @@ class NovoCliente extends React.Component {
   }
 
   render() {
+    const { email, password } = this.props;
     return(
-      <div className='novo-cliente'>
-        <h1>Cadastrar novo cliente</h1>
-        <form>
-          <input id='name' type='text' placeholder='Nome' />
-          <input id='age' type='number' placeholder='Idade' />
-          <input id='email' type='email' placeholder='e-mail' />
-        </form>
-        <button
-          type='button'
-          onClick={ () => this.dispatchData()}
-        >
-          Cadastrar
-        </button>
-        <button
-          type='button'
-          onClick={ () => this.handleClick('/clientes') }
-        >
-          Voltar
-        </button>
-      </div>
+      email === 'fernando.antunes1@gmail.com' && password === 'ferfilho1983' ?
+        <div className='novo-cliente'>
+          <h1>Cadastrar novo cliente</h1>
+          <form>
+            <input id='name' type='text' placeholder='Nome' />
+            <input id='age' type='number' placeholder='Idade' />
+            <input id='email' type='email' placeholder='e-mail' />
+          </form>
+          <button
+            type='button'
+            onClick={ () => this.dispatchData()}
+          >
+            Cadastrar
+          </button>
+          <button
+            type='button'
+            onClick={ () => this.handleClick('/clientes') }
+          >
+            Voltar
+          </button>
+        </div> :
+      <LoginFail />
     )
   }
 }
 
+const mapStateToProps = (state) => ({
+  email: state.userReducer.email,
+  password: state.userReducer.password,
+})
+
 const mapDispatchToProps = { addCustomer }
 
-export default connect(null, mapDispatchToProps)(withRouter(NovoCliente));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(NovoCliente));

@@ -10,7 +10,7 @@ class LoginFail extends React.Component {
   render() {
     return(
       <div className='login-fail'>
-      <h1>Email ou senha incorretos</h1>
+      <h1>Login não efetuado</h1>
         <button
           type='button'
           onClick={ () => this.handleClick('/login') }
